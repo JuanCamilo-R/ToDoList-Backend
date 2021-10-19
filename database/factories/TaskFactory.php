@@ -24,6 +24,7 @@ class TaskFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 5),
             'title' => $this->faker->realText($maxNbChars = 100, $indexSize = 1),
+            'completed' => $this->faker->boolean(50),
         ];
     }
 }
