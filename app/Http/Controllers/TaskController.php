@@ -18,7 +18,7 @@ class TaskController extends Controller
         }
     }
 
-    public function index(Request $request)
+    public function auth(Request $request)
     {
         try {
             $tasks = Task::where('user_id', $request->user_id)->get();

@@ -38,7 +38,7 @@ class UserController extends Controller
         $user = User::where('name', $request->name)->first();
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
-                return response($user->password, 202);
+                return response(['user_id' => $user->id, 'password' => $user->password], 202);
             } else {
                 return response('NOT OK', 400);
             }
